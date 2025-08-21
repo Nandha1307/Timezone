@@ -1,0 +1,166 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: rgba(0, 0, 0, 0.5);        /* semi-transparent black */
+    color: #e0e0e0;                        /* light color for contrast */
+    overflow: hidden;
+    backdrop-filter: blur(15px);           /* glassy blur */
+    -webkit-backdrop-filter: blur(15px);
+}
+
+h1 {
+    text-align: center;
+    margin: 5px 0;
+    font-size: 2.5vh;
+    font-weight: 700;
+    color: #1f2937;
+}
+
+.grid {
+    display: flex;
+    flex-wrap: wrap;        
+    column-gap: 2px;          /* horizontal space between clusters */
+    row-gap: 5px;             /* very small vertical space */
+    justify-content: flex-start;
+    align-items: flex-start;
+    padding: 4px;
+    box-sizing: border-box;
+    height: calc(100% - 40px);
+    background: transparent;
+}
+
+.card {
+    display: inline-flex;      /* shrink to fit */
+    flex-direction: column;
+    border-radius: 15px;
+    text-align: center;
+    background: #ffffff;
+    border: 2px solid grey;
+    padding: 0.5vh;
+    color: #1f2937;
+    height: 195px;             /* fixed height */
+    width: fit-content;        /* dynamic width based on sub-cards */
+    min-width: max-content;    /* ensures enough space for sub-cards */
+}
+
+.cluster {
+    font-weight: 700;
+    font-size: 1.8vh;
+    margin-bottom: 3px;
+    color: #1f2937;
+}
+
+.sub-grid {
+    display: flex;
+    flex-wrap: wrap;       /* allow wrapping when many sub-cards */
+    gap: 6px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.sub-card {
+    position: relative;          /* needed for top-right icon */
+    width: 157.7px;              
+    height: 168px;               
+    background: rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    color: #1f2937;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    box-sizing: border-box;
+    overflow: hidden;            
+}
+
+.flag {
+    width: 3.25vh;
+    height: auto;
+    border-radius: 4px;
+    box-shadow: 0 0 3px rgba(0,0,0,0.1);
+}
+
+.flag-group {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 2px;
+    margin-bottom: 0.3vh;
+}
+
+.country-name {
+    font-size: 1.9vh;
+    font-weight: 650;
+    margin-bottom: 0.2vh;
+}
+
+.time {
+    font-size: 2.7vh;
+    font-weight: 730;
+    color: #111827;
+}
+
+.date {
+    font-size: 1.6vh;
+    font-weight: 700;
+    color: #6b7280;
+}
+
+.utc-offset {
+    font-size: 13px;            
+    color: rgba(0,0,0,0.55);    
+    margin-top: 0.05px;
+    font-weight: 500;
+}
+
+.card.india {
+    background: #008000;  
+    border: 2px solid #006400; 
+    color: #ffffff;  
+    box-shadow: 0 4px 15px rgba(0, 128, 0, 0.3);
+}
+
+.dst-label {
+    color: #d97706;
+    font-weight: 700;
+    font-size: 0.65rem;
+    margin-left: 4px;
+    vertical-align: super;
+}
+
+.day-card {
+    background: rgba(255, 255, 255, 0.7);
+    border: 2px solid #a3d977;
+    box-shadow: 0 4px 12px rgba(163, 217, 119, 0.4);
+}
+
+.night-card {
+background: linear-gradient(145deg, rgba(150, 150, 150, 0.95), rgba(110, 110, 110, 0.9));
+border: 2px solid rgba(90, 90, 90, 0.6);
+    color: #ffffff !important;
+    backdrop-filter: blur(4px);
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(30, 41, 59, 0.6);
+}
+
+
+/* Make sure nested text elements also stay white */
+.night-card .country-name,
+.night-card .utc-offset,
+.night-card .date {
+    color: #ffffff !important;
+}
+.red-time {
+  color: red;
+  font-weight: bold;
+}
+
+
+
+
